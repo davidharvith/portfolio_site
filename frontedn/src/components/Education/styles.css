@@ -1,0 +1,111 @@
+.education-section {
+    padding: 3rem 1rem;
+    background: #f8faff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  
+  .education-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  
+  .education-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* <-- This centers the cards horizontally */
+    gap: 2rem;
+    width: 100%;
+  }
+  
+  .education-card {
+    background: #ADD8E6; /* Light blue */
+    color: #222;
+    width: 60vw;           /* Wider card: try 50vw, 60vw, or even 80vw */
+    max-width: 700px;      /* Optional: prevents it from getting too wide on large        /* Smaller, fixed width for the card */
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 
+      transform 0.22s cubic-bezier(.4,2,.6,1),
+      box-shadow 0.22s cubic-bezier(.4,2,.6,1),
+      background 0.22s cubic-bezier(.4,2,.6,1);
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .education-card:hover {
+    transform: translateY(-8px) scale(1.04);
+    
+  }
+  
+  .education-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .education-header h3,
+  .education-header .education-dates,
+  .education-field,
+  .education-gpa,
+  .education-coursework,
+  .education-coursework strong,
+  .education-coursework ul,
+  .education-coursework li,
+  .course-grade {
+    color: #222;
+  }
+  
+  .education-header .education-dates {
+    opacity: 0.8;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+  }
+  
+  .education-field {
+    font-size: 1.1rem;
+    margin: 0.6rem 0 0.2rem 0;
+    color: #222;
+  }
+  
+  .education-gpa {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+  }
+  
+  .education-coursework {
+    margin-top: 0.5rem;
+  }
+  
+  .education-coursework ul {
+    margin: 0.2rem 0 0 1rem;
+    padding: 0;
+    font-size: 0.98rem;
+  }
+  
+  .course-grade {
+    color: #1976d2;
+    font-weight: 600;
+    margin-left: 0.3rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .education-card {
+      width: 95vw;
+      max-width: 320px;
+      padding: 0.8rem 0.6rem;
+    }
+  }
+  

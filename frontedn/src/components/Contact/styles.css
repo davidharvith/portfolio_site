@@ -1,0 +1,26 @@
+.contact-section {
+    padding: 3rem 1rem;
+    background: #f9f9f9;
+    text-align: center;
+  }
+  
+  .contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-email {
+    display: inline-block;
+    margin-top: 0.7rem;
+    font-size: 1.0rem;
+    color: #1976d2;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.18s;
+  }
+  
+  .contact-email:hover {
+    color: #1565c0;
+    text-decoration: underline;
+  }
+  

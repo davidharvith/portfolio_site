@@ -1,0 +1,108 @@
+.skills-section {
+    padding: 3rem 1rem;
+    background: #f5faff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .skills-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .skills-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1100px;
+  }
+  
+  .skill-category {
+    background: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    padding: 1.5rem 2rem;
+    min-width: 220px;
+    max-width: 270px;
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .skill-category h3 {
+    font-size: 1.2rem;
+    color: #1976d2;
+    margin-bottom: 1rem;
+  }
+  
+  .skill-category ul {
+    list-style: disc inside;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .skill-category li {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  /* Responsive */
+  @media (max-width: 700px) {
+    .skills-categories {
+      flex-direction: column;
+      align-items: center;
+    }
+    .skill-category {
+      width: 90%;
+      max-width: 400px;
+    }
+  }
+
+/* src/components/Skills/styles.css */
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.skill-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 12px;
+  background: #f5f5f5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.skill-item:hover .skill-icon {
+  transform: scale(1.18) translateY(-6px);
+  box-shadow: 0 6px 20px rgba(30,144,255,0.15);
+}
+
+.skill-label {
+  font-size: 0.98rem;
+  color: #333;
+  text-align: center;
+  word-break: break-word;
+  margin-top: 0.2rem;
+}
+
+  

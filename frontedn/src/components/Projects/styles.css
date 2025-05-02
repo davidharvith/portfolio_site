@@ -1,0 +1,106 @@
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem;
+    background: #f9f9f9;
+  }
+  
+  .projects-section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 900px;
+  }
+  
+  .project-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    overflow: hidden;
+    min-height: 220px;
+    transition: box-shadow 0.2s;
+  }
+  
+  .project-card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+  }
+  
+  .project-card-text {
+    flex: 2;
+    padding: 2rem 2rem 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .project-card-text h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-card-text p {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-link {
+    align-self: flex-start;
+    color: #1976d2;
+    font-weight: 600;
+    text-decoration: none;
+    background: #e3f0fa;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.8rem;
+    transition: background 0.2s;
+  }
+  
+  .project-link:hover {
+    background: #b3e0ff;
+  }
+  
+  .project-card-image {
+    flex: 1;
+    min-width: 180px;
+    max-width: 260px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f4f8;
+  }
+  
+  .project-card-image img {
+    width: 90%;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 700px) {
+    .project-card {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+    .project-card-text {
+      padding: 1.5rem;
+      align-items: center;
+    }
+    .project-card-image {
+      max-width: 100%;
+      min-width: 0;
+      padding: 1rem 0;
+    }
+  }
+  
