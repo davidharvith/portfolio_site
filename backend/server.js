@@ -36,7 +36,7 @@ const allowedOrigins = [
   'https://portfolio-tan-three-14.vercel.app',
   'https://david-harvith.com',
   'https://www.david-harvith.com',
-  'http://localhost:5173/#chatbox'
+  'https://www.david-harvith.com/#chatbox'
 ];
 
 const allowedPatterns = [
