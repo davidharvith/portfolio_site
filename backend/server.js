@@ -31,13 +31,14 @@ try {
 
 // CORS Configuration
 const allowedOrigins = [
-  'http://localhost:5173',
-  'https://portfolio-np1q-op1jnimo8-davidharviths-projects.vercel.app',
-  'https://portfolio-tan-three-14.vercel.app',
-  'https://david-harvith.com',
-  'https://www.david-harvith.com',
-  'https://www.david-harvith.com/#chatbox'
-];
+    'http://localhost:5173',
+    'https://portfolio-np1q-op1jnimo8-davidharviths-projects.vercel.app',
+    'https://portfolio-tan-three-14.vercel.app',
+    'https://david-harvith.com',
+    'https://www.david-harvith.com',
+    'https://www.david-harvith.com/#chatbox',
+    'https://portfolio-production-8ba1.up.railway.app'
+  ];
 
 const allowedPatterns = [
   /\.vercel\.app$/,
@@ -59,7 +60,7 @@ const corsOptionsDelegate = (req, callback) => {
 
 app.use(cors(corsOptionsDelegate));
 app.use(express.json());
-app.options('*all', cors(corsOptionsDelegate));
+app.options('*', cors(corsOptionsDelegate));
 
 
 // API endpoint
