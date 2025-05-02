@@ -17,13 +17,16 @@ const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 const pdfPath = path.join(__dirname, 'David_Harvith_CV.pdf');
 
-// Read PDF file on startup
+// Read and process PDF file
 let resumeText = '';
 try {
     const pdfBuffer = readFileSync(pdfPath);
     const uint8Array = new Uint8Array(pdfBuffer);
     resumeText = await readPdfText({ data: uint8Array });
     console.log('✅ Resume text loaded successfully');
+    
+    // Truncate text to prevent oversized prompts
+    resumeText = resumeText.substring(0, 15000);
 } catch (err) {
     console.error('❌ Failed to read PDF:', err);
     process.exit(1);
@@ -32,40 +35,42 @@ try {
 // CORS Configuration
 const allowedOrigins = [
     'http://localhost:5173',
-    'https://portfolio-np1q-op1jnimo8-davidharviths-projects.vercel.app',
-    'https://portfolio-tan-three-14.vercel.app',
-    'https://david-harvith.com',
     'https://www.david-harvith.com',
-    'https://www.david-harvith.com/#chatbox',
+    'https://david-harvith.com',
     'https://portfolio-production-8ba1.up.railway.app'
-  ];
-
-const allowedPatterns = [
-  /\.vercel\.app$/,
-  /\.railway\.app$/
 ];
 
-const corsOptionsDelegate = (req, callback) => {
-  const origin = req.header('Origin');
-  const isAllowed =
-    allowedOrigins.includes(origin) ||
-    allowedPatterns.some(pattern => pattern.test(origin));
-  callback(null, {
-    origin: isAllowed,
+const allowedPatterns = [
+    /^https:\/\/portfolio-.*\.vercel\.app$/,
+    /\.railway\.app$/
+];
+
+const corsOptions = {
+    origin: (origin, callback) => {
+        if (!origin) return callback(null, true);
+        
+        const isAllowed = allowedOrigins.includes(origin) ||
+            allowedPatterns.some(pattern => pattern.test(origin));
+
+        callback(null, isAllowed);
+    },
     methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type'],
-    credentials: true
-  });
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+    optionsSuccessStatus: 200
 };
 
-app.use(cors(corsOptionsDelegate));
+// Apply middleware
+app.use(cors(corsOptions));
 app.use(express.json());
-app.options('*all', cors(corsOptionsDelegate));
-
 
 // API endpoint
 app.post('/api/ask', async (req, res) => {
     const { question } = req.body;
+
+    if (!question?.trim()) {
+        return res.status(400).json({ answer: "Please provide a valid question" });
+    }
 
     const systemPrompt = `
     You are David Harvith's virtual assistant. Answer questions naturally as if you were David himself.
@@ -87,21 +92,39 @@ app.post('/api/ask', async (req, res) => {
                 messages: [
                     { role: "system", content: systemPrompt },
                     { role: "user", content: question }
-                ]
+                ],
+                temperature: 0.5,
+                max_tokens: 500
             },
             {
                 headers: {
                     'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
                     'Content-Type': 'application/json'
-                }
+                },
+                timeout: 10000
             }
         );
         
         res.json({ answer: response.data.choices[0].message.content });
     } catch (err) {
-        console.error('API Error:', err.response?.data || err.message);
-        res.status(500).json({ answer: "Sorry, I'm having trouble connecting to the AI service." });
+        console.error('API Error:', {
+            status: err.response?.status,
+            data: err.response?.data,
+            message: err.message
+        });
+        
+        const errorMessage = err.response?.data?.error?.message || 
+                            "I'm experiencing technical difficulties. Please try again later.";
+        res.status(500).json({ answer: errorMessage });
     }
+});
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.status(200).json({ 
+        status: 'OK', 
+        resumeLoaded: resumeText.length > 0 
+    });
 });
 
 // Start server
