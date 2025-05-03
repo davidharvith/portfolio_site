@@ -1,4 +1,4 @@
-// components/InteractiveBackground/InteractiveBackground.jsx
+// InteractiveBackground.jsx
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
@@ -13,6 +13,7 @@ const InteractiveBackground = ({ children }) => {
   }, []);
 
   const particlesConfig = {
+    fullScreen: { enable: false }, // <--- this is key
     background: { color: "#000000" },
     interactivity: {
       events: { onHover: { enable: true, mode: "repulse" } },
@@ -32,7 +33,12 @@ const InteractiveBackground = ({ children }) => {
   if (!init) return null;
 
   return (
-    <div style={{ position: "relative", minHeight: "100vh" }}>
+    <div style={{
+      position: "relative",
+      width: "100%",
+      height: "600px", // adjust this height as needed!
+      overflow: "hidden"
+    }}>
       <Particles
         id="tsparticles"
         options={particlesConfig}
