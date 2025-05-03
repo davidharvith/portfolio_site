@@ -21,7 +21,7 @@ simulator to test trading strategies using historical data. Applied OOP\
 principles to support the Open-Closed Principle for easy strategy\
 extensibility. Integrated real-time data via the Alpha Vantage API.\
 ",
-    image: "/images/todo-list.png",
+    image: "/StockSimularot.PNG",
     github: "https://github.com/yourusername/todo-list"
   },
   // Add more project objects here...
