@@ -1,3 +1,4 @@
+import { loadFull } from "tsparticles-engine"; // Updated import
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { useCallback } from "react";
