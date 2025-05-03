@@ -14,7 +14,7 @@ const InteractiveBackground = ({ children }) => {
 
   const particlesConfig = {
     fullScreen: { enable: false },
-    background: { color: "#000000" },
+    background: { color: "#0a0a23" },
     interactivity: {
       events: {
         onHover: {
@@ -63,7 +63,7 @@ const InteractiveBackground = ({ children }) => {
       },
       opacity: { value: 0.5 },
       shape: { type: "circle" },
-      size: { value: { min: 1, max: 3 } }
+      size: { value: { min: 2, max: 4 } }
     }
   };
 
