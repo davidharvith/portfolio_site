@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-
+import "./styles.css"; // Import your CSS styles if needed
 const InteractiveBackground = ({ children }) => {
   const [init, setInit] = useState(false);
 
@@ -37,24 +37,20 @@ const InteractiveBackground = ({ children }) => {
       style={{
         position: "relative",
         width: "100%",
-        height: "600px", // adjust as needed
+        height: "600px", // Match your content height
         overflow: "hidden"
       }}
     >
       <Particles
         id="tsparticles"
         options={particlesConfig}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 0,
-          pointerEvents: "none" // <--- THIS IS IMPORTANT!
-        }}
+        className="particles-canvas" // Add class for CSS targeting
       />
-      <div style={{ position: "relative", zIndex: 1 }}>
+      <div style={{ 
+        position: "relative", 
+        zIndex: 1,
+        pointerEvents: "auto" // Explicitly enable interactions
+      }}>
         {children}
       </div>
     </div>
