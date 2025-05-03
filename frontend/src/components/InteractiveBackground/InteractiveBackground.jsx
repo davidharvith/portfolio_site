@@ -1,7 +1,6 @@
-import { useEffect, useCallback } from "react";
 import { initParticlesEngine } from "@tsparticles/engine";
 import Particles from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim"; // Using slim package for smaller bundle
+import { loadSlim } from "@tsparticles/slim";
 
 
 const InteractiveBackground = () => {
