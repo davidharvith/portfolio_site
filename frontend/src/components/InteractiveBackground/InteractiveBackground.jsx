@@ -1,33 +1,37 @@
-import { loadFull } from "tsparticles-engine"; // Updated import
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import { useCallback } from "react";
+import { useEffect, useCallback } from "react";
+import Particles from "@tsparticles/react";
+import { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim"; // Using slim package for smaller bundle
 
-const ParticleBackground = () => {
+const InteractiveBackground = () => {
   const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
+    await loadSlim(engine);
   }, []);
+
+  useEffect(() => {
+    initParticlesEngine(particlesInit);
+  }, [particlesInit]);
 
   return (
     <Particles
       id="tsparticles"
-      init={particlesInit}
       options={{
-        background: { color: "#1e90ff" }, // or transparent
-        fpsLimit: 60,
-        interactivity: {
-          events: { onHover: { enable: true, mode: "repulse" } },
-          modes: { repulse: { distance: 100, duration: 0.4 } }
-        },
+        background: { color: "#1e90ff" },
         particles: {
-          color: { value: "#fff" },
-          links: { enable: true, color: "#fff", distance: 150 },
-          collisions: { enable: false },
-          move: { enable: true, speed: 2, outModes: { default: "bounce" } },
-          number: { value: 60 },
-          opacity: { value: 0.5 },
-          shape: { type: "circle" },
-          size: { value: { min: 2, max: 5 } }
+          color: { value: "#ffffff" },
+          links: {
+            enable: true,
+            color: "#ffffff",
+            distance: 150,
+            opacity: 0.4
+          },
+          move: {
+            enable: true,
+            speed: 1,
+            direction: "none",
+            outModes: "bounce"
+          },
+          number: { density: { enable: true }, value: 60 }
         }
       }}
       style={{
@@ -42,4 +46,4 @@ const ParticleBackground = () => {
   );
 };
 
-export default ParticleBackground;
+export default InteractiveBackground;
