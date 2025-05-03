@@ -18,6 +18,7 @@ html, body {
 
     z-index: 2;
     margin-top: 50vh;
+    margin-bottom: 20vh;
     padding: 1rem;
     background: white;
   }
