@@ -13,7 +13,7 @@ const InteractiveBackground = ({ children }) => {
   }, []);
 
   const particlesConfig = {
-    fullScreen: { enable: false }, // <--- this is key
+    fullScreen: { enable: false },
     background: { color: "#000000" },
     interactivity: {
       events: { onHover: { enable: true, mode: "repulse" } },
@@ -33,12 +33,14 @@ const InteractiveBackground = ({ children }) => {
   if (!init) return null;
 
   return (
-    <div style={{
-      position: "relative",
-      width: "100%",
-      height: "600px", // adjust this height as needed!
-      overflow: "hidden"
-    }}>
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "600px", // adjust as needed
+        overflow: "hidden"
+      }}
+    >
       <Particles
         id="tsparticles"
         options={particlesConfig}
@@ -48,7 +50,8 @@ const InteractiveBackground = ({ children }) => {
           left: 0,
           width: "100%",
           height: "100%",
-          zIndex: 0
+          zIndex: 0,
+          pointerEvents: "none" // <--- THIS IS IMPORTANT!
         }}
       />
       <div style={{ position: "relative", zIndex: 1 }}>
