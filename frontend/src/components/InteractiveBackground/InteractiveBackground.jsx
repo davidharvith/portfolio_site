@@ -16,14 +16,51 @@ const InteractiveBackground = ({ children }) => {
     fullScreen: { enable: false },
     background: { color: "#000000" },
     interactivity: {
-      events: { onHover: { enable: true, mode: "repulse" } },
-      modes: { repulse: { distance: 100, duration: 0.4 } }
+      events: {
+        onHover: {
+          enable: true,
+          mode: ["connect", "grab"] // Combined effects
+        }
+      },
+      modes: {
+
+        connect: {
+          distance: 150,  // Connection radius from cursor
+          links: {
+            opacity:1 , // Link opacity to cursor
+            color: "#FFFFFF",
+            width: 1
+          }
+        },
+        grab: {
+          distance: 150,
+          links: {
+          opacity: 1,
+          color: "#FFFFFF"
+          }
+        }
+      }
     },
     particles: {
       color: { value: "#FFFFFF" },
-      links: { color: "#FFFFFF", distance: 150, enable: true, opacity: 0.4, width: 1 },
-      move: { enable: true, speed: 1 },
-      number: { density: { enable: true, area: 800 }, value: 50 },
+      links: {
+        color: "#FFFFFF",
+        distance: 120,    // Reduced distance between particles
+        enable: true,
+        opacity: 0.2,     // Lower opacity for particle-particle links
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 1.5,       // Slightly faster movement
+        outModes: {
+          default: "bounce" // Particles bounce at edges
+        }
+      },
+      number: {
+        density: { enable: true, area: 800 },
+        value: 100         // More particles for more connections
+      },
       opacity: { value: 0.5 },
       shape: { type: "circle" },
       size: { value: { min: 1, max: 3 } }
@@ -37,7 +74,8 @@ const InteractiveBackground = ({ children }) => {
       style={{
         position: "relative",
         width: "100%",
-        height: "600px", // Match your content height
+        height: "85vh", // Match your content height
+        marginBottom: "120px",
         overflow: "hidden"
       }}
     >
