@@ -1,73 +1,44 @@
-import React, { useRef, useEffect, useState } from 'react';
-import './styles.css';
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import { useCallback } from "react";
 
-const InteractiveBackground = ({ children }) => {
-  const canvasRef = useRef(null);
-  const containerRef = useRef(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [contentHeight, setContentHeight] = useState(0);
-
-  useEffect(() => {
-    const calculateContentHeight = () => {
-      if (containerRef.current) {
-        const header = containerRef.current.querySelector('header');
-        const about = containerRef.current.querySelector('#about');
-        const totalHeight = header.offsetHeight + about.offsetHeight + 100; // +100px padding
-        setContentHeight(totalHeight);
-      }
-    };
-
-    calculateContentHeight();
-    window.addEventListener('resize', calculateContentHeight);
-    return () => window.removeEventListener('resize', calculateContentHeight);
+const ParticleBackground = () => {
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
   }, []);
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas?.getContext('2d');
-    if (!ctx) return;
-
-    const animate = () => {
-      ctx.fillStyle = '#1e90ff';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      if (mousePos.x > 0 && mousePos.y > 0) {
-        const gradient = ctx.createRadialGradient(
-          mousePos.x, mousePos.y, 20,
-          mousePos.x, mousePos.y, 100
-        );
-        gradient.addColorStop(0, 'rgba(0,0,0,0.2)');
-        gradient.addColorStop(1, 'transparent');
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-      }
-
-      requestAnimationFrame(animate);
-    };
-
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = contentHeight;
-    };
-
-    resizeCanvas();
-    animate();
-    return () => cancelAnimationFrame(animate);
-  }, [contentHeight, mousePos]);
-
   return (
-    <div 
-      ref={containerRef}
-      className="interactive-background"
-      onMouseMove={(e) => setMousePos({ x: e.clientX, y: e.clientY })}
-      onMouseLeave={() => setMousePos({ x: -1000, y: -1000 })}
-    >
-      <canvas ref={canvasRef} className="background-canvas" />
-      <div className="content-container">
-        {children}
-      </div>
-    </div>
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      options={{
+        background: { color: "#1e90ff" }, // or transparent
+        fpsLimit: 60,
+        interactivity: {
+          events: { onHover: { enable: true, mode: "repulse" } },
+          modes: { repulse: { distance: 100, duration: 0.4 } }
+        },
+        particles: {
+          color: { value: "#fff" },
+          links: { enable: true, color: "#fff", distance: 150 },
+          collisions: { enable: false },
+          move: { enable: true, speed: 2, outModes: { default: "bounce" } },
+          number: { value: 60 },
+          opacity: { value: 0.5 },
+          shape: { type: "circle" },
+          size: { value: { min: 2, max: 5 } }
+        }
+      }}
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        zIndex: 0
+      }}
+    />
   );
 };
 
-export default InteractiveBackground;
+export default ParticleBackground;
