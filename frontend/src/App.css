@@ -4,7 +4,10 @@ html, body {
     overflow-x: hidden;
     box-sizing: border-box;
   }
-
+  html {
+    scroll-padding-top: 5rem; /* Match or slightly exceed your header height */
+  }
+  
   body {
     padding-top: 0px; /* or whatever matches your header height */
   }

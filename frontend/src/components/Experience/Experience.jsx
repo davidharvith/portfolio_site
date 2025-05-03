@@ -5,6 +5,7 @@ import "./styles.css";
 
 const Experince = () => (
   <div id="experience" className="v-timeline-container">
+    <h2 className="v-timeline-header">Experience</h2>
     <div className="v-timeline-line" />
     <div className="v-timeline-items">
       {experienceData.map((exp, index) => {

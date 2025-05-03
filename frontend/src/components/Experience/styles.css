@@ -8,13 +8,22 @@
   margin: 0 auto;
 }
 
+.v-timeline-header {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  z-index: 2;
+  position: relative;
+}
+
 .v-timeline-line {
   position: absolute;
-  top: 0;
+  /* Start the line lower, below the header */
+  top: 9.5rem; /* adjust as needed to clear the header */
   left: 50%;
   transform: translateX(-50%);
   width: 4px;
-  height: 100%;
+  height: calc(100% - 4.5rem); /* subtract the top offset */
   background: #e0e0e0;
   z-index: 0;
 }
