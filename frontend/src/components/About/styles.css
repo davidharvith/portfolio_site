@@ -1,40 +1,41 @@
-.about-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
-    padding: 2rem 0;
-  }
-  
-  .about-profile-img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    margin-top: 1.5rem;
-    border: 3px solid #ccc;
-  }
-  
-  .about-text-box {
-    max-width: 600px;
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-  }
-  
-  .about-text-box h2 {
-    margin: 0 0 1rem 0;
+.about-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
 
-    color: #fff;           /* White text */
-    font-size: 2.5rem;     /* Larger heading */
-  }
-  
-  .about-text-box p {
-    margin: 0;
-    line-height: 1.6;
-    color: #fff;           /* White text */
-    font-size: 1.8rem;     /* Larger paragraph *
-      width: 90%;           /* or a specific px value like 700px */
-  max-width: 700px;     /* optional: limit max width for readability */
-  }
+.about-btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  background: #1976d2;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+
+.about-btn.linkedin {
+  background: #0077b5;
+}
+
+.about-btn.github {
+  background: #24292e;
+}
+
+.about-btn:hover {
+  background: #1565c0;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.about-btn.linkedin:hover {
+  background: #005983;
+}
+
+.about-btn.github:hover {
+  background: #444c56;
+}
