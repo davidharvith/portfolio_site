@@ -1,6 +1,6 @@
 import { useEffect, useCallback } from "react";
 import { initParticlesEngine } from "@tsparticles/react";
-
+import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; // Using slim package for smaller bundle
 
 
