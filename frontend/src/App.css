@@ -17,7 +17,7 @@ html, body {
   section:not(#about) {
 
     z-index: 2;
-    margin-top: 50vh;
+    margin-top: 30vh;
     margin-bottom: 20vh;
     padding: 1rem;
     background: white;

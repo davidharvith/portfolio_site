@@ -11,7 +11,7 @@ answers questions about my background, experience, and projects.\
 Built using Node.js and React, the site showcases both frontend and\
 backend development skills while providing an engaging way for\
 visitors to learn about me.",
-    image: "/images/weather-app.png",
+    image: "/portfolio.PNG",
     github: "https://github.com/yourusername/weather-app"
   },
   {

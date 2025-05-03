@@ -3,15 +3,15 @@ import React from "react";
 
 const SkillCategory = ({ title, skills }) => (
   <div className="skill-category">
-    <h3>{title}</h3>
-    <div className="skills-list">
+    <span className="skill-category-title">{title}:</span>
+    <ul className="skills-list-horizontal">
       {skills.map((skill, idx) => (
-        <div className="skill-item" key={idx}>
-          <img src={skill.icon} alt={skill.name} className="skill-icon" />
+        <li className="skill-item-horizontal" key={idx}>
+          {skill.icon && <img src={skill.icon} alt={skill.name} className="skill-icon" />}
           <span className="skill-label">{skill.name}</span>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   </div>
 );
 

@@ -48,7 +48,7 @@ const ChatBox = () => {
   };
 
   return (
-    <div className="chat-container">
+    <div id="chatbox" className="chat-container">
       <ChatHeader />
       <MessageDisplay messages={messages} ref={chatBoxRef} />
       <ChatInput onSend={handleSend} />

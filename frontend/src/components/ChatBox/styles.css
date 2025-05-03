@@ -20,7 +20,7 @@
   /* Message display area */
   .message-display {
     width: 100%;
-    height: 500px; /* Fixed height */
+    height: 400px; /* Fixed height */
     background: #fff;
     border: 2px solid #ddd;
     border-radius: 15px;
@@ -77,5 +77,129 @@
   .chat-input button:hover {
     transform: scale(1.05);
     background: #45a049;
+  }
+  
+  .tooltip-question {
+    position: relative;
+    display: inline-block;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  
+  .question-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2em;
+    height: 1.2em;
+    background: #1976d2;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.1em;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    transition: background 0.2s;
+  }
+  
+  .tooltip-question:hover .question-icon {
+    background: #125ea2;
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    width: 240px;
+    background-color: #222;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 0.7em 1em;
+    position: absolute;
+    z-index: 10;
+    bottom: 130%; /* Show above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: opacity 0.3s;
+    font-size: 0.98em;
+    pointer-events: none;
+  }
+  
+  .tooltip-question:hover .tooltip-text,
+  .tooltip-question:focus-within .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+
+  .chatbot-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* space between text and icon */
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  
+  .tooltip-question {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none; /* remove default focus outline, add custom if needed */
+  }
+  
+  .question-icon {
+    width: 1.2em;
+    height: 1.2em;
+    background: #1976d2;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.1em;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    transition: background 0.2s;
+    user-select: none;
+  }
+  
+  .tooltip-question:hover .question-icon,
+  .tooltip-question:focus .question-icon {
+    background: #125ea2;
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    width: 240px;
+    background-color: #222;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 0.7em 1em;
+    position: absolute;
+    z-index: 10;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: opacity 0.3s;
+    font-size: 0.98em;
+    pointer-events: none;
+  }
+  
+  .tooltip-question:hover .tooltip-text,
+  .tooltip-question:focus .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+  .chatbot-header-title {
+    color: #d24d19;        /* Blue color */
+    font-size: 1.6rem;     /* Make it bigger; adjust as needed */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;;
   }
   
