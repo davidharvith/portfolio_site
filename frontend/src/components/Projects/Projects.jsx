@@ -12,7 +12,7 @@ Built using Node.js and React, the site showcases both frontend and\
 backend development skills while providing an engaging way for\
 visitors to learn about me.",
     image: "/portfolio.PNG",
-    github: "https://github.com/yourusername/weather-app"
+    github: "https://github.com/davidharvith/portfolio_site"
   },
   {
     title: "Stock Market Simulator",
@@ -22,9 +22,20 @@ principles to support the Open-Closed Principle for easy strategy\
 extensibility. Integrated real-time data via the Alpha Vantage API.\
 ",
     image: "/StockSimularot.PNG",
-    github: "https://github.com/yourusername/todo-list"
+    github: "https://github.com/davidharvith/StockMarketSimulator"
   },
-  // Add more project objects here...
+  {
+    title: "tweet generator",
+    description: "A probabilistic tweet\
+generator that constructs a language model from a dataset of\
+5,000 tweets to generate realistic new content. Implemented\
+efficient memory management techniques in C to handle text\
+processing and chain construction. Designed modular\
+architecture for processing large text datasets.",
+
+    image: "/tweet.svg",
+    github: "https://github.com/davidharvith/tweet_generator"
+}
 ];
 
 const Projects = () => (

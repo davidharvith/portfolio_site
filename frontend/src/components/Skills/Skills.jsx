@@ -21,7 +21,8 @@ const skillsData = [
       { name: "JavaScript", icon: "/icons/javascript.svg" },
       { name: "Node.js", icon: "/icons/Node.js.svg" },
       { name: "React", icon: "/icons/react.svg" },
-      { name: "HTML", icon: "/icons/html5.svg" }
+      { name: "HTML", icon: "/icons/html5.svg" },
+      { name: "CSS", icon: "/icons/css.svg" }
     ]
   },
   {
@@ -31,10 +32,13 @@ const skillsData = [
     ]
   },
   {
-    title: "Libraries & Frameworks",
+    title: "Libraries",
     skills: [
       { name: "NumPy", icon: "/icons/numpy.svg" },
-      { name: "React", icon: "/icons/react.svg" }
+      { name: "Pandas", icon: "/icons/pandas.png" },
+      { name: "TensorFlow", icon: "/icons/tensorflow.svg" },
+      { name: "scikit-learn", icon: "/icons/scikitlearn.svg" },
+      {}
     ]
   },
   {

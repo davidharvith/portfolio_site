@@ -65,7 +65,7 @@
 
 .v-timeline-content--left {
   justify-content: flex-end;
-  text-align: right;
+  text-align: left;
 }
 
 .v-timeline-content--right {

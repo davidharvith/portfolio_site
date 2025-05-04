@@ -22,7 +22,7 @@
   }
   
   .education-card {
-    background: #ADD8E6; /* Light blue */
+    background: #e4eaed; /* Light blue */
     color: #222;
     width: 60vw;           /* Wider card: try 50vw, 60vw, or even 80vw */
     max-width: 700px;      /* Optional: prevents it from getting too wide on large        /* Smaller, fixed width for the card */
@@ -63,7 +63,7 @@
   .education-coursework ul,
   .education-coursework li,
   .course-grade {
-    color: #222;
+    color: #000000;
   }
   
   .education-header .education-dates {
@@ -95,7 +95,7 @@
   }
   
   .course-grade {
-    color: #1976d2;
+    color: #000000;
     font-weight: 600;
     margin-left: 0.3rem;
   }

@@ -1,28 +1,31 @@
 html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
-  html {
-    scroll-padding-top: 5rem; /* Match or slightly exceed your header height */
-  }
-  
-  body {
-    padding-top: 0px; /* or whatever matches your header height */
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-  /* Ensure subsequent sections have proper spacing */
-  section:not(#about) {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    z-index: 2;
-    margin-top: 30vh;
-    margin-bottom: 20vh;
-    padding: 1rem;
-    background: white;
+html {
+  scroll-padding-top: 5rem; /* Match or slightly exceed your header height */
   }
-  
+
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+section:not(#about):not(#contact) {
+  z-index: 2;
+  margin-top: 30vh;
+  margin-bottom: 20vh;
+  padding: 1rem;
+  background: white;
+}
+
+#contact {
+  margin-top: auto;  /* This now works! */
+  margin-bottom: 0;
+  padding: 1rem;
+  background: white;
+}
