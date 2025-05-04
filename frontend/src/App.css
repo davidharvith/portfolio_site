@@ -16,7 +16,7 @@ html {
 }
 
 section:not(#about):not(#contact) {
-  z-index: 2;
+
   margin-top: 30vh;
   margin-bottom: 20vh;
   padding: 1rem;
@@ -29,3 +29,5 @@ section:not(#about):not(#contact) {
   padding: 1rem;
   background: white;
 }
+
+
