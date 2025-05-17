@@ -8,7 +8,7 @@ import Education from './components/Education/Education.jsx';
 import Contact from './components/Contact/Contact.jsx';
 import InteractiveBackground from './components/InteractiveBackground/InteractiveBackground';
 import './App.css';
-
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
   return (
