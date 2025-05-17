@@ -8,6 +8,7 @@ import path from 'path';
 
 // Initialize environment variables
 dotenv.config();
+console.log("✅ Using API Key:", process.env.GROQ_API_KEY?.slice(0, 6), '...'); 
 
 // Create Express app
 const app = express();
