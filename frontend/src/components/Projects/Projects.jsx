@@ -8,7 +8,7 @@ const projects = [
     title: "Budget Tracker API",
     description: "Developed a secure RESTful API with Spring Boot, PostgreSQL, and JWT authentication.\
      Features include CRUD operations, analytics, and Swagger documentation. Dockerized for deployment.",
-    image: "/RESTapi.PNG",
+    image: "/RESTapi.webp",
     github: "https://github.com/davidharvith/budget-tracker"
   },
   {
