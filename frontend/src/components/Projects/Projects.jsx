@@ -5,6 +5,13 @@ import "./styles.css";
 
 const projects = [
   {
+    title: "Budget Tracker API",
+    description: "Developed a secure RESTful API with Spring Boot, PostgreSQL, and JWT authentication.\
+     Features include CRUD operations, analytics, and Swagger documentation. Dockerized for deployment.",
+    image: "/RESTapi.PNG",
+    github: "https://github.com/davidharvith/budget-tracker"
+  },
+  {
     title: "Portfolio Website",
     description: "Developed a portfolio website featuring an interactive chat-bot to\
 answers questions about my background, experience, and projects.\
