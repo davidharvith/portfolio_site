@@ -50,13 +50,20 @@ const ChatBox = () => {
   return (
     <div id="chatbox" className="chat-container">
       <ChatHeader />
-  {/* Show input below header before first message */}
-  {messages.length === 0 && <ChatInput onSend={handleSend} />}
+    {messages.length === 0 && (
+      <div className="chat-input-transition">
+        <ChatInput onSend={handleSend} />
+      </div>
+    )}
 
-  <MessageDisplay messages={messages} ref={chatBoxRef} />
+    <MessageDisplay messages={messages} ref={chatBoxRef} />
 
-  {/* Move input below message box after first message */}
-  {messages.length > 0 && <ChatInput onSend={handleSend} />}
+    {messages.length > 0 && (
+      <div className="chat-input-transition moved">
+        <ChatInput onSend={handleSend} />
+      </div>
+    )}
+
     </div>
   );
 };
