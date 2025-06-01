@@ -1,10 +1,10 @@
 const educationData = [
     {
-      degree: "B.S.",
+      degree: "B.S.",git 
       field: "Mathematics and Computer Science",
       institution: "The Hebrew University of Jerusalem",
-      dates: "Sep 2023 – Dec 2025",
-      gpa: "3.6",
+      dates: "Sep 2023 – Sep 2025",
+      gpa: "3.7",
       coursework: [
         { name: "Algorithms", grade: "100" },
         { name: "Data Structures", grade: "94" },
