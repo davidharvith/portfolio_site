@@ -4,7 +4,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 50%;
     max-width: 900px;
     margin: 2rem auto;
     padding: 0 1rem;
@@ -21,7 +20,7 @@
   /* Message display area */
   .message-display {
     width: 100%;
-    height: 400px; /* Fixed height */
+    height: 33%; /* Fixed height */
     background: #fff;
     border: 2px solid #ddd;
     border-radius: 15px;
