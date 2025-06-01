@@ -1,6 +1,6 @@
 const educationData = [
     {
-      degree: "B.S.",git 
+      degree: "B.S.", 
       field: "Mathematics and Computer Science",
       institution: "The Hebrew University of Jerusalem",
       dates: "Sep 2023 – Sep 2025",
