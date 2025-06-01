@@ -204,12 +204,17 @@
   }
   
 
-  .chat-input-transition {
+.chat-input-transition {
+  display: flex; /* ensures ChatInput layout is preserved */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 800px;
   opacity: 0;
   transform: translateY(-10px);
   transition: all 0.4s ease;
+  height: auto;
+  margin-top: 1rem;
 }
-
 .chat-input-transition.moved {
   opacity: 1;
   transform: translateY(0);
