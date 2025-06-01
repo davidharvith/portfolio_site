@@ -53,6 +53,7 @@ const ChatBox = () => {
     {messages.length === 0 && (
       <div className="chat-input-transition">
         <ChatInput onSend={handleSend} />
+        <br />
       </div>
     )}
 
