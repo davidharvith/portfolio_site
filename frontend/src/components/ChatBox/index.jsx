@@ -7,6 +7,7 @@ import './styles.css';
 const ChatBox = () => {
   const [messages, setMessages] = useState([]);
   const chatBoxRef = useRef(null);
+  const [hasSentFirst, setHasSentFirst] = useState(false);
 
   // Scroll handling
   useEffect(() => {
@@ -22,6 +23,12 @@ const ChatBox = () => {
   const handleSend = async (input) => {
     if (!input.trim()) return;
     
+    if (!hasSentFirst) {
+    const chatboxElement = document.getElementById('chatbox');
+    chatboxElement?.scrollIntoView({ behavior: 'smooth' });
+    setHasSentFirst(true);
+  }
+
     setMessages(prev => [...prev, 
       { sender: 'user', text: input },
       { sender: 'David', text: 'Thinking...' }
