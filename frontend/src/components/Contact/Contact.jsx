@@ -11,6 +11,7 @@ const Contact = () => (
         david.harvith@mail.huji.ac.il
       </a>
     </p>
+
   </section>
 );
 
