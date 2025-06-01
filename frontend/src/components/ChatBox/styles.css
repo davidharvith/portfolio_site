@@ -20,7 +20,7 @@
   /* Message display area */
   .message-display {
     width: 100%;
-    height: 33vh; /* Fixed height */
+    height: 45vh; /* Fixed height */
     background: #fff;
     border: 2px solid #ddd;
     border-radius: 15px;

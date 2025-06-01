@@ -50,8 +50,13 @@ const ChatBox = () => {
   return (
     <div id="chatbox" className="chat-container">
       <ChatHeader />
-      <MessageDisplay messages={messages} ref={chatBoxRef} />
-      <ChatInput onSend={handleSend} />
+  {/* Show input below header before first message */}
+  {messages.length === 0 && <ChatInput onSend={handleSend} />}
+
+  <MessageDisplay messages={messages} ref={chatBoxRef} />
+
+  {/* Move input below message box after first message */}
+  {messages.length > 0 && <ChatInput onSend={handleSend} />}
     </div>
   );
 };
