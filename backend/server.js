@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 
 // Get absolute path to PDF
 const __dirname = path.resolve();
-const pdfPath = path.join(__dirname, 'DavidHarvithCV.pdf');
+const pdfPath = path.join(__dirname, 'CVDavidHarvith.pdf');
 
 // Read and process PDF file
 let resumeText = '';
